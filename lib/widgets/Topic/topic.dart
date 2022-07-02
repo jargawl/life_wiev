@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class EmotionPalet extends StatelessWidget {
+class Topic extends StatelessWidget {
   final String text;
-  const EmotionPalet(this.text, {Key? key}) : super(key: key);
+  const Topic(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

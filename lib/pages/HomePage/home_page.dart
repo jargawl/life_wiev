@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:life_wiev/widgets/EmotionCard/emotion_card.dart';
-
-import 'package:life_wiev/widgets/EmotionPalet/emotion_palet.dart';
+import 'package:life_wiev/widgets/Topic/topic.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +19,7 @@ class _HomePageState extends State<HomePage> {
           CustomScrollView(
             slivers: [
               LogoBanner(),
-              EmotionPalet('How do you feel today?'),
+              Topic('How do you feel today?'),
               EmotionGrid(),
             ],
           ),
