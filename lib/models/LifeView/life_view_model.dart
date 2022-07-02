@@ -4,7 +4,6 @@ class LifeView {
     required this.image,
   });
   String title;
-
   String image;
 }
 
@@ -16,7 +15,7 @@ List<LifeView> lifeViews = [
   ),
   LifeView(
     title: "My goals",
-    image: 'https://images-na.ssl-images-amazon.com/images/I/61SlCtyxoOL.jpg',
+    image: 'https://miro.medium.com/max/686/0*9rzGQRKC2kLHrD1M.png',
   ),
   LifeView(
     title: "My dreams",
