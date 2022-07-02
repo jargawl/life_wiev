@@ -41,9 +41,6 @@ class _HomePageState extends State<HomePage> {
               LogoBanner(),
               Topic('How do you feel today?'),
               EmotionGrid(),
-              SliverToBoxAdapter(
-                child: SizedBox(height: 20),
-              ),
               ResetCount(),
               SliverToBoxAdapter(
                 child: SizedBox(height: 20),
