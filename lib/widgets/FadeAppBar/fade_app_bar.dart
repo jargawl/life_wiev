@@ -14,6 +14,10 @@ class FadeAppBar extends StatelessWidget {
           vertical: 10.0,
           horizontal: 24.0,
         ),
+        color: Colors.white.withOpacity(
+          (scrollOffset / 350).clamp(0, 1).toDouble(),
+        ),
+        child: SafeArea(child: Container()),
       ),
     );
   }
