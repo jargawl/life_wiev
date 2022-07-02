@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
   double _scrollControllerOffset = 0.0;
-   
+
   void _scrollListener() {
     setState(() {
       _scrollControllerOffset = _scrollController.offset;
@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
               LogoBanner(),
               Topic('How do you feel today?'),
               EmotionGrid(),
-              ResetCount(),
               SliverToBoxAdapter(
                 child: SizedBox(height: 20),
               ),
