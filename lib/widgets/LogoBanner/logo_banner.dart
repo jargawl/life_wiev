@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LogoBanner extends StatelessWidget {
   const LogoBanner({Key? key}) : super(key: key);
@@ -19,15 +20,27 @@ class LogoBanner extends StatelessWidget {
               alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  SizedBox(
-                    height: 100,
+                children: [
+                  const SizedBox(
+                    height: 25,
                   ),
-                  Text('jakiś tekst ',
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                  SizedBox(
+                  Text(
+                    'Life',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.wellfleet(
+                      color: Colors.white,
+                      fontSize: 50,
+                    ),
+                  ),
+                  Text(
+                    'View',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.wellfleet(
+                      color: Colors.white,
+                      fontSize: 50,
+                    ),
+                  ),
+                  const SizedBox(
                     height: 25,
                   ),
                 ],
