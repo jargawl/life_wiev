@@ -6,24 +6,33 @@ class EmotionCard extends StatefulWidget {
   final Emotion emotion;
 
   @override
-  State<EmotionCard> createState() => _EmotionCardState();
+  State<EmotionCard> createState() => EmotionCardState();
 }
 
-class _EmotionCardState extends State<EmotionCard> {
-  int _counter = 0;
+class EmotionCardState extends State<EmotionCard> {
+  int counter = 0;
 
-  void _incrementCounter() {
+  void incrementCounter() {
     setState(() {
-      _counter++;
+      counter++;
+    });
+  }
+
+  void resetCounter() {
+    setState(() {
+      counter = 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        _incrementCounter();
-      },
+    return GestureDetector(
+      onTap: (() {
+        incrementCounter();
+      }),
+      onLongPress: (() {
+        resetCounter();
+      }),
       child: Padding(
         padding: const EdgeInsets.all(12.5),
         child: Row(
@@ -47,9 +56,9 @@ class _EmotionCardState extends State<EmotionCard> {
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    '$_counter',
+                    '$counter',
                     style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.normal),
+                        fontSize: 18, fontWeight: FontWeight.normal),
                   ),
                 ],
               ),
