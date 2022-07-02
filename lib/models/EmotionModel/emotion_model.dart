@@ -16,7 +16,7 @@ List<Emotion> emotions = [
           "https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f60a.png",
       count: "1"),
   Emotion(
-      title: "Trusted",
+      title: "Grateful",
       image: 'https://images.emojiterra.com/google/android-10/512px/1f91d.png',
       count: "34"),
   Emotion(
@@ -40,7 +40,7 @@ List<Emotion> emotions = [
           'https://i.pinimg.com/originals/b1/13/6c/b1136c912e6cfa93b3e1463db47bb508.png',
       count: "34"),
   Emotion(
-      title: "Expectation",
+      title: "Expectations",
       image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmfTtPHy34jf8GnCTb1Ng1zkDIiCbMsG392YncQRF8Nq93wvko2IF-S00F01mynwyf8s&usqp=CAU",
       count: "45"),
