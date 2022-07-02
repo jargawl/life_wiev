@@ -1,44 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:life_wiev/models/EmotionModel/emotion_model.dart';
 
-class EmotionCard extends StatelessWidget {
+class EmotionCard extends StatefulWidget {
+  const EmotionCard(this.emotion, {Key? key}) : super(key: key);
   final Emotion emotion;
 
-  const EmotionCard(this.emotion, {Key? key}) : super(key: key);
+  @override
+  State<EmotionCard> createState() => _EmotionCardState();
+}
+
+class _EmotionCardState extends State<EmotionCard> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.5),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              emotion.image,
-              width: 59,
+    return InkWell(
+      onTap: () {
+        _incrementCounter();
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(12.5),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                widget.emotion.image,
+                width: 59,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5.0, top: 5.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  emotion.title,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  emotion.count,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.normal),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0, top: 5.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.emotion.title,
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '$_counter',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.normal),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
