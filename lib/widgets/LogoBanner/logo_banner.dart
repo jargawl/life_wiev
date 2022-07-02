@@ -14,7 +14,7 @@ class LogoBanner extends StatelessWidget {
             Image.network(
               "https://images.photowall.com/products/60742/palm-trees-on-white-beach.jpg?h=699&q=85",
               fit: BoxFit.cover,
-              height: 270,
+              height: 350,
             ),
             Align(
               alignment: Alignment.center,
@@ -22,7 +22,7 @@ class LogoBanner extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 25,
+                    height: 50,
                   ),
                   Text(
                     'Life',

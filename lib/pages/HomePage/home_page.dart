@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_wiev/widgets/EmotionPalet/emotion_palet.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,10 +14,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: [
+        children: const [
           CustomScrollView(
             slivers: [
               LogoBanner(),
+              EmotionPalet('How do you feel today?'),
             ],
           ),
         ],
