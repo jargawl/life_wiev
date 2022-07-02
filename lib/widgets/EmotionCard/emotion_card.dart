@@ -33,7 +33,7 @@ class EmotionCard extends StatelessWidget {
                 Text(
                   emotion.count,
                   style: const TextStyle(
-                      fontSize: 12, fontWeight: FontWeight.normal),
+                      fontSize: 16, fontWeight: FontWeight.normal),
                 ),
               ],
             ),
