@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:life_wiev/pages/HomePage/home_page.dart';
+import 'package:life_wiev/pages/RootPage/root_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }
