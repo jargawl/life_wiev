@@ -37,7 +37,7 @@ List<Emotion> emotions = [
   Emotion(
       title: "Surprised",
       image:
-          'https://i.pinimg.com/originals/b1/13/6c/b1136c912e6cfa93b3e1463db47bb508.png',
+          'https://media.istockphoto.com/vectors/cute-surprised-emoticon-on-white-background-vector-id840934838?k=20&m=840934838&s=612x612&w=0&h=8WUeQdzrQttWFrmUQQttZFK4GkWCeLqnfINaIrYoKq8=',
       count: 0),
   Emotion(
       title: "Expectations",
