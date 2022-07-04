@@ -75,22 +75,20 @@ class EmotionGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SliverGrid(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: 10.0,
-          crossAxisSpacing: 10.0,
-          childAspectRatio: 2.5 / 1,
-          crossAxisCount: 2,
-        ),
-        delegate: SliverChildBuilderDelegate(
-          (BuildContext context, int index) {
-            return EmotionCard(
-              emotions[index],
-            );
-          },
-          childCount: emotions.length,
-        ),
+    return SliverGrid(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 10.0,
+        childAspectRatio: 2.5 / 1,
+        crossAxisCount: 2,
+      ),
+      delegate: SliverChildBuilderDelegate(
+        (BuildContext context, int index) {
+          return EmotionCard(
+            emotions[index],
+          );
+        },
+        childCount: emotions.length,
       ),
     );
   }
