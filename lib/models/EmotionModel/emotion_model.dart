@@ -32,7 +32,7 @@ List<Emotion> emotions = [
   Emotion(
       title: "Angry",
       image:
-          "https://www.pngitem.com/pimgs/m/12-121133_angry-emoji-png-circle-transparent-png.png",
+          "https://static8.depositphotos.com/1001911/974/v/950/depositphotos_9746784-stock-illustration-accusing-emoticon.jpg",
       count: 0),
   Emotion(
       title: "Surprised",
