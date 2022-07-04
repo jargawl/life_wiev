@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:life_wiev/widgets/EmotionCard/emotion_card.dart';
 import 'package:life_wiev/widgets/FadeAppBar/fade_app_bar.dart';
 import 'package:life_wiev/widgets/LifeViewCard/life_view_card.dart';
-import 'package:life_wiev/widgets/SingOutButton/sing_out_button.dart';
+import 'package:life_wiev/widgets/LogOutButton/log_out_button.dart';
 import 'package:life_wiev/widgets/Topic/topic.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
 
