@@ -15,16 +15,12 @@ class GratefulPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(40),
-          ),
-        ),
         title: Text(
-          'coś tam ',
-          style: GoogleFonts.pacifico(
+          "I'am grateful for ...",
+          style: GoogleFonts.wellfleet(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
@@ -46,7 +42,7 @@ class GratefulPage extends StatelessWidget {
               },
               child: const Icon(
                 Icons.add,
-                color: Color.fromARGB(255, 47, 184, 129),
+                color: Colors.white,
               ),
             );
           },
@@ -62,7 +58,7 @@ class GratefulPage extends StatelessWidget {
           builder: (context, state) {
             if (state.status == Status.error) {
               final errorMessage =
-                  state.errorMessage ?? 'Wystąpił nieoczekiwany błąd';
+                  state.errorMessage ?? 'Something went wrong...';
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(errorMessage),
                 backgroundColor: Colors.amber,
@@ -76,8 +72,9 @@ class GratefulPage extends StatelessWidget {
             return Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
+                  fit: BoxFit.cover,
                   image: NetworkImage(
-                    'https://media0.giphy.com/media/vWSBsXFFZOdXO6rJYM/giphy.gif?cid=6c09b95245n48aszelfom5zs77m08y1jnyeubkv331ij1l9q&rid=giphy.gif&ct=ts',
+                    'https://images.photowall.com/products/60742/palm-trees-on-white-beach.jpg?h=699&q=85',
                   ),
                 ),
               ),
@@ -90,8 +87,8 @@ class GratefulPage extends StatelessWidget {
                       child: TextField(
                         controller: controller,
                         decoration: InputDecoration(
-                          hintStyle: GoogleFonts.pacifico(),
-                          hintText: 'coś tam ',
+                          hintStyle: GoogleFonts.wellfleet(),
+                          hintText: 'And what are you grateful for today?',
                           border: const OutlineInputBorder(),
                         ),
                       ),
@@ -155,9 +152,9 @@ class NameWidgetGrateful extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 400,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 23, 213, 169),
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: Colors.lightBlue[200],
+        borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
       ),
@@ -165,7 +162,7 @@ class NameWidgetGrateful extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       child: Text(
         name,
-        style: GoogleFonts.pacifico(
+        style: GoogleFonts.wellfleet(
           color: Colors.white,
           fontSize: 23,
         ),
