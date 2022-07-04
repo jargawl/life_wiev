@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:life_wiev/pages/Auth/LoginPage/cubit/login_page_cubit.dart';
+import 'package:life_wiev/pages/LoginPage/LoginPage/cubit/login_page_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({

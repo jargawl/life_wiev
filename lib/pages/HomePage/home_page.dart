@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:life_wiev/widgets/EmotionCard/emotion_card.dart';
 import 'package:life_wiev/widgets/FadeAppBar/fade_app_bar.dart';
@@ -6,7 +7,9 @@ import 'package:life_wiev/widgets/Topic/topic.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key, required this.user}) : super(key: key);
+
+  final User user;
 
   @override
   State<HomePage> createState() => _HomePageState();
