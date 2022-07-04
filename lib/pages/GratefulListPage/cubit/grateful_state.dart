@@ -1,6 +1,14 @@
 part of 'grateful_cubit.dart';
 
 @immutable
-abstract class GratefulState {}
+class GratefulState {
+  final List<ItemModel> documents;
+  final Status status;
+  final String? errorMessage;
 
-class GratefulInitial extends GratefulState {}
+   const GratefulState({
+    required this.documents,
+    required this.errorMessage,
+    this.status = Status.initial,
+  });
+}
