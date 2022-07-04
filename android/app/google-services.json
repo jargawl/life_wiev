@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "548354758583",
+    "project_id": "life-view-517cf",
+    "storage_bucket": "life-view-517cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548354758583:android:dcf4bf4291354fd09eba32",
+        "android_client_info": {
+          "package_name": "com.example.life_wiev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548354758583-thfb2r6vv97avsn6sap2bokqcqkoc6vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACEZuP8SGPkMan_LNcuT8i_k_licUVSq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548354758583-thfb2r6vv97avsn6sap2bokqcqkoc6vk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548354758583-8b3vnujre8flpcd7gu8pb97u0ksucept.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jaroslawgawlik.com.lifeWiev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548354758583:android:bbb42f1507bbb7179eba32",
+        "android_client_info": {
+          "package_name": "jaroslawgawlik.com.life_wiev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548354758583-thfb2r6vv97avsn6sap2bokqcqkoc6vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACEZuP8SGPkMan_LNcuT8i_k_licUVSq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548354758583-thfb2r6vv97avsn6sap2bokqcqkoc6vk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548354758583-8b3vnujre8flpcd7gu8pb97u0ksucept.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jaroslawgawlik.com.lifeWiev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
