@@ -3,34 +3,33 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart';
+import 'package:life_wiev/services/Data/Repositories/goals_repositories.dart';
+part 'goals_state.dart';
 
-part 'grateful_state.dart';
-
-class GratefulCubit extends Cubit<GratefulState> {
-  GratefulCubit(this._gratefulRepositories)
+class GoalsCubit extends Cubit<GoalsState> {
+  GoalsCubit(this._goalsRepositories)
       : super(
-          const GratefulState(
+          const GoalsState(
             documents: [],
             errorMessage: '',
             status: Status.initial,
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GratefulRepositories _gratefulRepositories;
+  final GoalsRepositories _goalsRepositories;
 
   Future<void> start() async {
     emit(
-      const GratefulState(
+      const GoalsState(
         documents: [],
         errorMessage: '',
         status: Status.loading,
       ),
     );
-    _streamSubscription = _gratefulRepositories.getItemsStream().listen(
+    _streamSubscription = _goalsRepositories.getItemsStream().listen(
       (data) {
         emit(
-          GratefulState(
+          GoalsState(
             documents: data,
             status: Status.success,
             errorMessage: '',
@@ -39,7 +38,7 @@ class GratefulCubit extends Cubit<GratefulState> {
       },
     )..onError(
         (error) {
-          GratefulState(
+          GoalsState(
             documents: const [],
             status: Status.error,
             errorMessage: error.toString(),
@@ -52,13 +51,13 @@ class GratefulCubit extends Cubit<GratefulState> {
     required document,
     required id,
   }) async {
-    await _gratefulRepositories.delete(id: document.id);
+    await _goalsRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _gratefulRepositories.add(name: name);
+    _goalsRepositories.add(name: name);
   }
 
   @override

@@ -1,36 +1,35 @@
 import 'dart:async';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart';
+import 'package:life_wiev/services/Data/Repositories/dreams_repositories.dart';
+part 'dreams_state.dart';
 
-part 'grateful_state.dart';
-
-class GratefulCubit extends Cubit<GratefulState> {
-  GratefulCubit(this._gratefulRepositories)
+class DreamsCubit extends Cubit<DreamsState> {
+  DreamsCubit(this._dreamsRepositories)
       : super(
-          const GratefulState(
+          const DreamsState(
             documents: [],
             errorMessage: '',
             status: Status.initial,
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GratefulRepositories _gratefulRepositories;
+  final DreamsRepositories _dreamsRepositories;
 
   Future<void> start() async {
     emit(
-      const GratefulState(
+      const DreamsState(
         documents: [],
         errorMessage: '',
         status: Status.loading,
       ),
     );
-    _streamSubscription = _gratefulRepositories.getItemsStream().listen(
+    _streamSubscription = _dreamsRepositories.getItemsStream().listen(
       (data) {
         emit(
-          GratefulState(
+          DreamsState(
             documents: data,
             status: Status.success,
             errorMessage: '',
@@ -39,7 +38,7 @@ class GratefulCubit extends Cubit<GratefulState> {
       },
     )..onError(
         (error) {
-          GratefulState(
+          DreamsState(
             documents: const [],
             status: Status.error,
             errorMessage: error.toString(),
@@ -52,13 +51,13 @@ class GratefulCubit extends Cubit<GratefulState> {
     required document,
     required id,
   }) async {
-    await _gratefulRepositories.delete(id: document.id);
+    await _dreamsRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _gratefulRepositories.add(name: name);
+    _dreamsRepositories.add(name: name);
   }
 
   @override

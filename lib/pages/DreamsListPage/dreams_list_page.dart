@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
-import 'package:life_wiev/pages/GratefulListPage/cubit/grateful_cubit.dart';
-import 'package:life_wiev/services/Data/DataSources/gratefuls_data_sources.dart';
-import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart';
+import 'package:life_wiev/pages/DreamsListPage/cubit/dreams_cubit.dart';
+import 'package:life_wiev/services/Data/DataSources/dreams_data_sources.dart';
+import 'package:life_wiev/services/Data/Repositories/dreams_repositories.dart';
 
-class GratefulPage extends StatelessWidget {
-  GratefulPage({Key? key}) : super(key: key);
+class DreamsPage extends StatelessWidget {
+  DreamsPage({Key? key}) : super(key: key);
 
   final controller = TextEditingController();
 
@@ -16,7 +16,7 @@ class GratefulPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "I'am grateful for ...",
+          "My dream is ...",
           style: GoogleFonts.wellfleet(
             color: Colors.white,
             fontSize: 20,
@@ -26,16 +26,16 @@ class GratefulPage extends StatelessWidget {
         centerTitle: true,
       ),
       floatingActionButton: BlocProvider(
-        create: (context) => GratefulCubit(
-          GratefulRepositories(
-            GratefulRemoteDataSource(),
+        create: (context) => DreamsCubit(
+          DreamsRepositories(
+            DreamsRemoteDataSource(),
           ),
         ),
-        child: BlocBuilder<GratefulCubit, GratefulState>(
+        child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
             return FloatingActionButton(
               onPressed: () {
-                context.read<GratefulCubit>().add(
+                context.read<DreamsCubit>().add(
                       name: controller.text,
                     );
                 controller.clear();
@@ -49,12 +49,12 @@ class GratefulPage extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => GratefulCubit(
-          GratefulRepositories(
-            GratefulRemoteDataSource(),
+        create: (context) => DreamsCubit(
+          DreamsRepositories(
+            DreamsRemoteDataSource(),
           ),
         )..start(),
-        child: BlocBuilder<GratefulCubit, GratefulState>(
+        child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
             if (state.status == Status.error) {
               final errorMessage =
@@ -88,14 +88,14 @@ class GratefulPage extends StatelessWidget {
                         controller: controller,
                         decoration: InputDecoration(
                           hintStyle: GoogleFonts.wellfleet(),
-                          hintText: 'What are you grateful for today?',
+                          hintText: 'What is your realy big dream?',
                           border: const OutlineInputBorder(),
                         ),
                       ),
                     ),
                   ),
                   for (final itemModel in itemModels) ...[
-                    BlocBuilder<GratefulCubit, GratefulState>(
+                    BlocBuilder<DreamsCubit, DreamsState>(
                       builder: (context, state) {
                         return Dismissible(
                           key: ValueKey(itemModel.id),
@@ -119,12 +119,12 @@ class GratefulPage extends StatelessWidget {
                             return direction == DismissDirection.endToStart;
                           },
                           onDismissed: (_) {
-                            context.read<GratefulCubit>().delete(
+                            context.read<DreamsCubit>().delete(
                                   document: itemModel,
                                   id: itemModel.id,
                                 );
                           },
-                          child: NameWidgetGrateful(
+                          child: NameWidgetDreams(
                             itemModel.name,
                           ),
                         );
@@ -141,8 +141,8 @@ class GratefulPage extends StatelessWidget {
   }
 }
 
-class NameWidgetGrateful extends StatelessWidget {
-  const NameWidgetGrateful(
+class NameWidgetDreams extends StatelessWidget {
+  const NameWidgetDreams(
     this.name, {
     Key? key,
   }) : super(key: key);
