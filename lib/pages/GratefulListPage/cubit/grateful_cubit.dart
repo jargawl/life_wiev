@@ -8,7 +8,7 @@ import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart
 part 'grateful_state.dart';
 
 class GratefulCubit extends Cubit<GratefulState> {
-  GratefulCubit(this._itemRepositories)
+  GratefulCubit(this._gratefulRepositories)
       : super(
           const GratefulState(
             documents: [],
@@ -17,7 +17,7 @@ class GratefulCubit extends Cubit<GratefulState> {
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GratefulRepositories _itemRepositories;
+  final GratefulRepositories _gratefulRepositories;
 
   Future<void> start() async {
     emit(
@@ -27,7 +27,7 @@ class GratefulCubit extends Cubit<GratefulState> {
         status: Status.loading,
       ),
     );
-    _streamSubscription = _itemRepositories.getItemsStream().listen(
+    _streamSubscription = _gratefulRepositories.getItemsStream().listen(
       (data) {
         emit(
           GratefulState(
@@ -52,13 +52,13 @@ class GratefulCubit extends Cubit<GratefulState> {
     required document,
     required id,
   }) async {
-    await _itemRepositories.delete(id: document.id);
+    await _gratefulRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _itemRepositories.add(name: name);
+    _gratefulRepositories.add(name: name);
   }
 
   @override

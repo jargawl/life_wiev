@@ -1,6 +1,17 @@
-part of 'dreams_cubit.dart';
+import 'package:flutter/material.dart';
+import 'package:life_wiev/core/enums/enums.dart';
+import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
+
 
 @immutable
-abstract class DreamsState {}
+class DreamsState {
+  final List<ItemModel> documents;
+  final Status status;
+  final String? errorMessage;
 
-class DreamsInitial extends DreamsState {}
+   const DreamsState({
+    required this.documents,
+    required this.errorMessage,
+    this.status = Status.initial,
+  });
+}

@@ -7,7 +7,7 @@ import 'package:life_wiev/services/Data/Repositories/goals_repositories.dart';
 part 'goals_state.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
-  GoalsCubit(this._itemRepositories)
+  GoalsCubit(this._goalsRepositories)
       : super(
           const GoalsState(
             documents: [],
@@ -16,7 +16,7 @@ class GoalsCubit extends Cubit<GoalsState> {
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GoalsRepositories _itemRepositories;
+  final GoalsRepositories _goalsRepositories;
 
   Future<void> start() async {
     emit(
@@ -26,7 +26,7 @@ class GoalsCubit extends Cubit<GoalsState> {
         status: Status.loading,
       ),
     );
-    _streamSubscription = _itemRepositories.getItemsStream().listen(
+    _streamSubscription = _goalsRepositories.getItemsStream().listen(
       (data) {
         emit(
           GoalsState(
@@ -51,13 +51,13 @@ class GoalsCubit extends Cubit<GoalsState> {
     required document,
     required id,
   }) async {
-    await _itemRepositories.delete(id: document.id);
+    await _goalsRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _itemRepositories.add(name: name);
+    _goalsRepositories.add(name: name);
   }
 
   @override
