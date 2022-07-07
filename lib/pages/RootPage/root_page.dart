@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+
 import 'package:life_wiev/pages/HomePage/home_page.dart';
 import 'package:life_wiev/pages/LoginPage/LoginPage/cubit/login_page_cubit.dart';
 import 'package:life_wiev/pages/LoginPage/LoginPage/login_page.dart';
@@ -19,7 +21,9 @@ class RootPage extends StatelessWidget {
           if (user == null) {
             return LoginPage();
           }
-          return HomePage(user: user);
+          return HomePage(
+            user: user,
+          );
         },
       ),
     );

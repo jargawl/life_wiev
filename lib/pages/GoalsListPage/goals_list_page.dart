@@ -6,9 +6,10 @@ import 'package:life_wiev/pages/GoalsListPage/cubit/goals_cubit.dart';
 import 'package:life_wiev/services/Data/DataSources/goals_data_sources.dart';
 import 'package:life_wiev/services/Data/Repositories/goals_repositories.dart';
 
-
 class GoalsPage extends StatelessWidget {
-  GoalsPage({Key? key}) : super(key: key);
+  GoalsPage({
+    Key? key,
+  }) : super(key: key);
 
   final controller = TextEditingController();
 
