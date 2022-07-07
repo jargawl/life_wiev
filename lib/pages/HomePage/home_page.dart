@@ -8,8 +8,10 @@ import 'package:life_wiev/widgets/Topic/topic.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.user}) : super(key: key);
-
+  const HomePage({
+    Key? key,
+    required this.user,
+  }) : super(key: key);
   final User user;
 
   @override
@@ -19,6 +21,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
   double _scrollControllerOffset = 0.0;
+
+  _HomePageState();
 
   void _scrollListener() {
     setState(() {

@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:life_wiev/core/app/my_app.dart';
 import 'package:life_wiev/firebase_options.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+
+  runApp(const  MyApp());
 }

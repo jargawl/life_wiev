@@ -58,7 +58,7 @@ class EmotionCardState extends State<EmotionCard> {
                   Text(
                     '$counter',
                     style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.normal),
+                        fontSize: 16, fontWeight: FontWeight.normal),
                   ),
                 ],
               ),
