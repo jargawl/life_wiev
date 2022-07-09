@@ -7,14 +7,12 @@ class MotivationQuotesRepositories {
       _motivationQuotesRemoteDioDataSources;
 
   Future<QuotesModel?> getQuotesModel() async {
-    final responseData =
+    final json =
         await _motivationQuotesRemoteDioDataSources.getQuotesRespondeData();
-    if (responseData == null) {
+    if (json == null) {
       return null;
     }
 
-    final author = responseData['author'] as String;
-    final text = responseData['text'] as String;
-    return QuotesModel(text, author);
+    return QuotesModel.fromJson(json);
   }
 }
