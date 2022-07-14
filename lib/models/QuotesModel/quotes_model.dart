@@ -1,15 +1,16 @@
-import 'dart:convert';
-
 class QuotesModel {
-  QuotesModel(
-    this.text,
-    this.author,
-  );
+  QuotesModel({
+    required this.text,
+    required this.author,
+  });
 
   final String text;
   final String author;
 
-  QuotesModel.fromJson(Map<String, dynamic> json)
-      : text = json['text'],
-        author = json['author'];
+  factory QuotesModel.fromJson(Map<String, dynamic> json) {
+    return QuotesModel(
+      text: json['quotes']['text'],
+      author: json['quotes']['author'],
+    );
+  }
 }

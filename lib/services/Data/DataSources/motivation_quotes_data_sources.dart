@@ -1,10 +1,14 @@
 import 'package:dio/dio.dart';
 
 class MotivationQuotesRemoteDioDataSources {
-  Future<Map<String,dynamic>?> getQuotesRespondeData() async {
-    final response =
-        await Dio().get<Map<String, dynamic>>('https://type.fit/api/quotes');
-    return response.data;
-  
+  Future<List<Map<String, dynamic>>?> getQuotesRespondeData() async {
+    final response = await Dio().get<List<dynamic>>(
+        'https://my-json-server.typicode.com/jargawl/json/quotes');
+    final listDynamic = response.data;
+    
+    if (listDynamic == null) {
+      return null;
+    }
+    return listDynamic.map((e) => e as Map<String, dynamic>).toList();
   }
 }

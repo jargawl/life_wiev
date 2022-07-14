@@ -2,17 +2,19 @@ import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
 import 'package:life_wiev/services/Data/DataSources/motivation_quotes_data_sources.dart';
 
 class MotivationQuotesRepositories {
-  MotivationQuotesRepositories(this._motivationQuotesRemoteDioDataSources);
+  MotivationQuotesRepositories(
+      {required this.motivationQuotesRemoteDioDataSources});
   final MotivationQuotesRemoteDioDataSources
-      _motivationQuotesRemoteDioDataSources;
+      motivationQuotesRemoteDioDataSources;
 
-  Future<QuotesModel?> getQuotesModel() async {
+  Future<List<QuotesModel>> getQuotesModel() async {
     final json =
-        await _motivationQuotesRemoteDioDataSources.getQuotesRespondeData();
+        await motivationQuotesRemoteDioDataSources.getQuotesRespondeData();
+
     if (json == null) {
-      return null;
+      return [];
     }
 
-    return QuotesModel.fromJson(json);
+    return json.map((item) => QuotesModel.fromJson(item)).toList();
   }
 }
