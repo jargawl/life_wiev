@@ -1,11 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
 import 'package:life_wiev/services/Data&Repositories/Repositories/dreams_repositories.dart';
 part 'dreams_state.dart';
 
+
+@injectable  
 class DreamsCubit extends Cubit<DreamsState> {
   DreamsCubit({required this.dreamsRepositories})
       : super(

@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class GratefulRemoteDataSource {
+  @factoryMethod
   Stream<QuerySnapshot<Map<String, dynamic>>?> gratefulRemoteData() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
@@ -39,7 +42,7 @@ class GratefulRemoteDataSource {
         .add({'name': name});
   }
 
-// Metoda zlicznia ilości powodów do wdzięczności 
+// Metoda zlicznia ilości powodów do wdzięczności
 
   // Future<int?> getCount() async {
   //   final userID = FirebaseAuth.instance.currentUser?.uid;

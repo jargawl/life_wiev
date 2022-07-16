@@ -1,7 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 
+
+@injectable  
 class GoalsRemoteDataSource {
+  @factoryMethod 
   Stream<QuerySnapshot<Map<String, dynamic>>?> goalsRemoteData() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {

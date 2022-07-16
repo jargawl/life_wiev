@@ -1,12 +1,15 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
 import 'package:life_wiev/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
 
 part 'grateful_state.dart';
 
+
+@injectable  
 class GratefulCubit extends Cubit<GratefulState> {
   GratefulCubit({required this.gratefulRepositories})
       : super(
