@@ -3,17 +3,10 @@ import 'package:life_wiev/services/Data&Repositories/DataSources/motivation_quot
 
 class MotivationQuotesRepositories {
   MotivationQuotesRepositories(this.motivationQuotesRemoteDioDataSources);
-  final MotivationQuotesRemoteDioDataSources
+  final MotivationQuotesRemoteRetrofitDataSources
       motivationQuotesRemoteDioDataSources;
 
   Future<QuotesModel?> getQuotesModel() async {
-    final json =
-        await motivationQuotesRemoteDioDataSources.getQuotesRespondeData();
-
-    if (json == null) {
-      return null;
-    }
-
-    return QuotesModel.fromJson(json);
+    return motivationQuotesRemoteDioDataSources.getQuotesRespondeData();
   }
 }

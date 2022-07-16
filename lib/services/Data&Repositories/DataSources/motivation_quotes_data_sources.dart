@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
+import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
+import 'package:retrofit/retrofit.dart';
 
-class MotivationQuotesRemoteDioDataSources {
-  MotivationQuotesRemoteDioDataSources(Dio dio);
 
-  Future<Map<String, dynamic>?> getQuotesRespondeData() async {
-    try {
-      final response = await Dio()
-          .get<Map<String, dynamic>>('https://api.quotable.io/random');
-      return response.data;
-    } on DioError catch (error) {
-      throw Exception(
-          error.response?.data['error']['message'] ?? 'Unknow error');
-    }
-  }
+part 'motivation_quotes_data_sources.g.dart';
+
+@RestApi(baseUrl: "https://api.quotable.io")
+abstract class MotivationQuotesRemoteRetrofitDataSources {
+  factory MotivationQuotesRemoteRetrofitDataSources(Dio dio, {String baseUrl}) = _MotivationQuotesRemoteRetrofitDataSources;
+
+  @GET("/random")
+  Future<QuotesModel> getQuotesRespondeData();
 }
+
+

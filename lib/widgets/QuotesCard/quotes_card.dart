@@ -18,7 +18,7 @@ class QoutesCardList extends StatelessWidget {
       child: BlocProvider(
         create: (context) => QoutesCardCubit(
           MotivationQuotesRepositories(
-            MotivationQuotesRemoteDioDataSources(
+            MotivationQuotesRemoteRetrofitDataSources(
               Dio(),
             ),
           ),
