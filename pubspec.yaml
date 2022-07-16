@@ -48,6 +48,7 @@ dependencies:
   json_annotation: ^4.5.0
   injectable: ^1.5.3
   freezed_annotation: ^1.1.0
+  retrofit: ^3.0.1+1
 
 dev_dependencies:
   flutter_test:
