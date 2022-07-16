@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/pages/LoginPage/LoginPage/cubit/login_page_cubit.dart';
 
 class SingOutButton extends StatelessWidget {
@@ -43,7 +44,13 @@ class SingOutButton extends StatelessWidget {
             ).createShader(
               Rect.fromLTWH(0, 0, bounds.width, bounds.height),
             ),
-            child: const Text('Logout'),
+            child: Text(
+              'Logout',
+              style: GoogleFonts.wellfleet(
+                color: Colors.lightBlue,
+                fontSize: 15,
+              ),
+            ),
           ),
         ),
       ),

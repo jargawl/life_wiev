@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
 import 'package:life_wiev/services/Data/DataSources/motivation_quotes_data_sources.dart';
@@ -58,29 +59,28 @@ class QoutesCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
-        color: Colors.lightBlue,
+        color: const Color.fromARGB(255, 197, 229, 244),
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             quotesModel.text,
-            style: TextStyle(
+            textAlign: TextAlign.center,
+            style: GoogleFonts.wellfleet(
+              color: Colors.lightBlue,
               fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.black.withOpacity(.9),
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 15,
           ),
           Text(
             quotesModel.author,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.black.withOpacity(.9),
+            textAlign: TextAlign.center,
+            style: GoogleFonts.wellfleet(
+              color: Colors.lightBlue,
+              fontSize: 15,
             ),
           ),
         ],
