@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:life_wiev/core/conteiner/injection_conteiner.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/GoalsListPage/cubit/goals_cubit.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/goals_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/goals_repositories.dart';
 
 class GoalsPage extends StatelessWidget {
   GoalsPage({
@@ -28,7 +29,11 @@ class GoalsPage extends StatelessWidget {
       ),
       floatingActionButton: BlocProvider<GoalsCubit>(
         create: (context) {
-          return getIt();
+          return GoalsCubit(
+            goalsRepositories: GoalsRepositories(
+              goalsRemoteDataSource: GoalsRemoteDataSource(),
+            ),
+          );
         },
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {
@@ -49,7 +54,11 @@ class GoalsPage extends StatelessWidget {
       ),
       body: BlocProvider<GoalsCubit>(
         create: (context) {
-          return getIt()..start();
+          return GoalsCubit(
+            goalsRepositories: GoalsRepositories(
+              goalsRemoteDataSource: GoalsRemoteDataSource(),
+            ),
+          )..start();
         },
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {

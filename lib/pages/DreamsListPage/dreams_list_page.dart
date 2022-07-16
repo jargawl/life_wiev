@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:life_wiev/core/conteiner/injection_conteiner.dart';
+
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/DreamsListPage/cubit/dreams_cubit.dart';
+
+import '../../services/Data&Repositories/DataSources/dreams_data_sources.dart';
+import '../../services/Data&Repositories/Repositories/dreams_repositories.dart';
 
 class DreamsPage extends StatelessWidget {
   DreamsPage({
@@ -27,7 +30,13 @@ class DreamsPage extends StatelessWidget {
         centerTitle: true,
       ),
       floatingActionButton: BlocProvider<DreamsCubit>(
-        create: (context){return getIt();},
+        create: (context) {
+          return DreamsCubit(
+            dreamsRepositories: DreamsRepositories(
+              dreamsRemoteDataSource: DreamsRemoteDataSource(),
+            ),
+          );
+        },
         child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
             return FloatingActionButton(
@@ -47,7 +56,11 @@ class DreamsPage extends StatelessWidget {
       ),
       body: BlocProvider<DreamsCubit>(
         create: (context) {
-          return getIt()..start();
+          return DreamsCubit(
+            dreamsRepositories: DreamsRepositories(
+              dreamsRemoteDataSource: DreamsRemoteDataSource(),
+            ),
+          )..start();
         },
         child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
