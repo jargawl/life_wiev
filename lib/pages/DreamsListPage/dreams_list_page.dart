@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/DreamsListPage/cubit/dreams_cubit.dart';
-import 'package:life_wiev/services/Data/DataSources/dreams_data_sources.dart';
-import 'package:life_wiev/services/Data/Repositories/dreams_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/dreams_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/dreams_repositories.dart';
 
 class DreamsPage extends StatelessWidget {
   DreamsPage({

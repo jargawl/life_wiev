@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/DataSources/dreams_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/dreams_data_sources.dart';
 
 class DreamsRepositories {
   DreamsRepositories(this._dreamsRemoteDataSource);

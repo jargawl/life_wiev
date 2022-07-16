@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/GratefulListPage/cubit/grateful_cubit.dart';
-import 'package:life_wiev/services/Data/DataSources/gratefuls_data_sources.dart';
-import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
 
 class GratefulPage extends StatelessWidget {
   GratefulPage({Key? key}) : super(key: key);

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
-import 'package:life_wiev/services/Data/DataSources/motivation_quotes_data_sources.dart';
-import 'package:life_wiev/services/Data/Repositories/motivation_quotes_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/motivation_quotes_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/motivation_quotes_repositories.dart';
 
 import 'package:life_wiev/widgets/QuotesCard/cubit/quotes_card_cubit.dart';
 

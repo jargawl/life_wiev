@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/GoalsListPage/cubit/goals_cubit.dart';
-import 'package:life_wiev/services/Data/DataSources/goals_data_sources.dart';
-import 'package:life_wiev/services/Data/Repositories/goals_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/goals_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/goals_repositories.dart';
 
 class GoalsPage extends StatelessWidget {
   GoalsPage({

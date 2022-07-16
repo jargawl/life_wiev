@@ -1,17 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/DataSources/goals_data_sources.dart';
+import 'package:life_wiev/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
 
-class GoalsRepositories {
-  GoalsRepositories(this._goalsRemoteDataSource);
-  final GoalsRemoteDataSource _goalsRemoteDataSource;
+class GratefulRepositories {
+  GratefulRepositories(this._gratefulRemoteDataSource);
+  final GratefulRemoteDataSource _gratefulRemoteDataSource;
 
   Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return _goalsRemoteDataSource.goalsRemoteData().map(
+    return _gratefulRemoteDataSource.gratefulRemoteData().map(
       (querySnapshot) {
         return querySnapshot!.docs.map((doc) {
           return ItemModel(
@@ -28,7 +28,7 @@ class GoalsRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return _goalsRemoteDataSource.delete(id: id);
+    return _gratefulRemoteDataSource.delete(id: id);
   }
 
   Future<void> add({required String name}) {
@@ -36,7 +36,7 @@ class GoalsRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return _goalsRemoteDataSource.add(name: name);
+    return _gratefulRemoteDataSource.add(name: name);
   }
 
 // Metoda zlicznia ilości powodów do wdzięczności 
@@ -45,7 +45,7 @@ class GoalsRepositories {
   //   if (userID == null) {
   //     Exception('Jesteś nie zalogowany');
   //   }
-  //   _goalsRemoteDataSource;
+  //   _gratefulRemoteDataSource;
   //   return null;
   // }
 }
