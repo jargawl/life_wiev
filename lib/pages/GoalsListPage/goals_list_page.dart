@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:life_wiev/core/conteiner/injection_conteiner.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/GoalsListPage/cubit/goals_cubit.dart';
-import 'package:life_wiev/services/Data&Repositories/DataSources/goals_data_sources.dart';
-import 'package:life_wiev/services/Data&Repositories/Repositories/goals_repositories.dart';
 
 class GoalsPage extends StatelessWidget {
   GoalsPage({
@@ -27,12 +26,10 @@ class GoalsPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      floatingActionButton: BlocProvider(
-        create: (context) => GoalsCubit(
-          GoalsRepositories(
-            GoalsRemoteDataSource(),
-          ),
-        ),
+      floatingActionButton: BlocProvider<GoalsCubit>(
+        create: (context) {
+          return getIt();
+        },
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {
             return FloatingActionButton(
@@ -50,12 +47,10 @@ class GoalsPage extends StatelessWidget {
           },
         ),
       ),
-      body: BlocProvider(
-        create: (context) => GoalsCubit(
-          GoalsRepositories(
-            GoalsRemoteDataSource(),
-          ),
-        )..start(),
+      body: BlocProvider<GoalsCubit>(
+        create: (context) {
+          return getIt()..start();
+        },
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {
             if (state.status == Status.error) {

@@ -7,7 +7,7 @@ import 'package:life_wiev/services/Data&Repositories/Repositories/motivation_quo
 part 'quotes_card_state.dart';
 
 class QoutesCardCubit extends Cubit<QoutesCardState> {
-  QoutesCardCubit(this.motivationQuotesRepositories)
+  QoutesCardCubit({required this.motivationQuotesRepositories})
       : super(const QoutesCardState());
 
   final MotivationQuotesRepositories motivationQuotesRepositories;

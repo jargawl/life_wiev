@@ -6,7 +6,6 @@ import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
 import 'package:life_wiev/services/Data&Repositories/DataSources/motivation_quotes_data_sources.dart';
 import 'package:life_wiev/services/Data&Repositories/Repositories/motivation_quotes_repositories.dart';
-
 import 'package:life_wiev/widgets/QuotesCard/cubit/quotes_card_cubit.dart';
 
 class QoutesCardList extends StatelessWidget {
@@ -15,10 +14,11 @@ class QoutesCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: BlocProvider(
+      child: BlocProvider<QoutesCardCubit>(
         create: (context) => QoutesCardCubit(
-          MotivationQuotesRepositories(
-            MotivationQuotesRemoteRetrofitDataSources(
+          motivationQuotesRepositories: MotivationQuotesRepositories(
+            motivationQuotesRemoteDioDataSources:
+                MotivationQuotesRemoteRetrofitDataSources(
               Dio(),
             ),
           ),

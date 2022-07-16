@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:life_wiev/core/conteiner/injection_conteiner.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/pages/DreamsListPage/cubit/dreams_cubit.dart';
-import 'package:life_wiev/services/Data&Repositories/DataSources/dreams_data_sources.dart';
-import 'package:life_wiev/services/Data&Repositories/Repositories/dreams_repositories.dart';
 
 class DreamsPage extends StatelessWidget {
   DreamsPage({
     Key? key,
-    
-    
   }) : super(key: key);
 
   final controller = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,12 +26,8 @@ class DreamsPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      floatingActionButton: BlocProvider(
-        create: (context) => DreamsCubit(
-          DreamsRepositories(
-            DreamsRemoteDataSource(),
-          ),
-        ),
+      floatingActionButton: BlocProvider<DreamsCubit>(
+        create: (context){return getIt();},
         child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
             return FloatingActionButton(
@@ -52,12 +45,10 @@ class DreamsPage extends StatelessWidget {
           },
         ),
       ),
-      body: BlocProvider(
-        create: (context) => DreamsCubit(
-          DreamsRepositories(
-            DreamsRemoteDataSource(),
-          ),
-        )..start(),
+      body: BlocProvider<DreamsCubit>(
+        create: (context) {
+          return getIt()..start();
+        },
         child: BlocBuilder<DreamsCubit, DreamsState>(
           builder: (context, state) {
             if (state.status == Status.error) {
