@@ -7,6 +7,7 @@ import 'package:life_wiev/widgets/LogOutButton/log_out_button.dart';
 import 'package:life_wiev/widgets/QuotesCard/quotes_card.dart';
 import 'package:life_wiev/widgets/Topic/topic.dart';
 import 'package:life_wiev/widgets/LogoBanner/logo_banner.dart';
+import 'package:life_wiev/widgets/TopicSmall/topic_small.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             slivers: const [
               LogoBanner(),
               Topic('How do you feel today?'),
+              TopicSmall('Press emoticons to count your emotions.'),
               EmotionGrid(),
               SliverToBoxAdapter(
                 child: SizedBox(height: 20),
