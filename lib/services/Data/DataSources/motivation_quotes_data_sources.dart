@@ -1,14 +1,16 @@
 import 'package:dio/dio.dart';
 
 class MotivationQuotesRemoteDioDataSources {
-  Future<List<Map<String, dynamic>>?> getQuotesRespondeData() async {
-    final response = await Dio().get<List<dynamic>>(
-        'https://my-json-server.typicode.com/jargawl/json/quotes');
-    final listDynamic = response.data;
-    
-    if (listDynamic == null) {
-      return null;
+  MotivationQuotesRemoteDioDataSources(Dio dio);
+
+  Future<Map<String, dynamic>?> getQuotesRespondeData() async {
+    try {
+      final response = await Dio()
+          .get<Map<String, dynamic>>('https://api.quotable.io/random');
+      return response.data;
+    } on DioError catch (error) {
+      throw Exception(
+          error.response?.data['error']['message'] ?? 'Unknow error');
     }
-    return listDynamic.map((e) => e as Map<String, dynamic>).toList();
   }
 }

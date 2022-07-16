@@ -9,8 +9,8 @@ class QuotesModel {
 
   factory QuotesModel.fromJson(Map<String, dynamic> json) {
     return QuotesModel(
-      text: json['quotes']['text'],
-      author: json['quotes']['author'],
+      text: json['content'],
+      author: json['author'],
     );
   }
 }

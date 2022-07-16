@@ -7,7 +7,7 @@ import 'package:life_wiev/services/Data/Repositories/motivation_quotes_repositor
 part 'quotes_card_state.dart';
 
 class QoutesCardCubit extends Cubit<QoutesCardState> {
-  QoutesCardCubit({required this.motivationQuotesRepositories})
+  QoutesCardCubit(this.motivationQuotesRepositories)
       : super(const QoutesCardState());
 
   final MotivationQuotesRepositories motivationQuotesRepositories;
@@ -22,9 +22,10 @@ class QoutesCardCubit extends Cubit<QoutesCardState> {
       final results = await motivationQuotesRepositories.getQuotesModel();
       emit(
         QoutesCardState(
-        status: Status.success,
-        results: results,
-      ));
+          status: Status.success,
+          results: results,
+        ),
+      );
     } catch (error) {
       emit(
         QoutesCardState(
