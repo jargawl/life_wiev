@@ -1,14 +1,17 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/Repositories/gratefuls_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
 
 part 'grateful_state.dart';
 
+
+@injectable  
 class GratefulCubit extends Cubit<GratefulState> {
-  GratefulCubit(this._gratefulRepositories)
+  GratefulCubit({required this.gratefulRepositories})
       : super(
           const GratefulState(
             documents: [],
@@ -17,7 +20,7 @@ class GratefulCubit extends Cubit<GratefulState> {
           ),
         );
   StreamSubscription? _streamSubscription;
-  final GratefulRepositories _gratefulRepositories;
+  final GratefulRepositories gratefulRepositories;
 
   Future<void> start() async {
     emit(
@@ -27,7 +30,7 @@ class GratefulCubit extends Cubit<GratefulState> {
         status: Status.loading,
       ),
     );
-    _streamSubscription = _gratefulRepositories.getItemsStream().listen(
+    _streamSubscription = gratefulRepositories.getItemsStream().listen(
       (data) {
         emit(
           GratefulState(
@@ -52,13 +55,13 @@ class GratefulCubit extends Cubit<GratefulState> {
     required document,
     required id,
   }) async {
-    await _gratefulRepositories.delete(id: document.id);
+    await gratefulRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _gratefulRepositories.add(name: name);
+    gratefulRepositories.add(name: name);
   }
 
   @override

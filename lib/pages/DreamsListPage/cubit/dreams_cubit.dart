@@ -1,13 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data/Repositories/dreams_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/dreams_repositories.dart';
 part 'dreams_state.dart';
 
+
+@injectable  
 class DreamsCubit extends Cubit<DreamsState> {
-  DreamsCubit(this._dreamsRepositories)
+  DreamsCubit({required this.dreamsRepositories})
       : super(
           const DreamsState(
             documents: [],
@@ -16,7 +19,7 @@ class DreamsCubit extends Cubit<DreamsState> {
           ),
         );
   StreamSubscription? _streamSubscription;
-  final DreamsRepositories _dreamsRepositories;
+  final DreamsRepositories dreamsRepositories;
 
   Future<void> start() async {
     emit(
@@ -26,7 +29,7 @@ class DreamsCubit extends Cubit<DreamsState> {
         status: Status.loading,
       ),
     );
-    _streamSubscription = _dreamsRepositories.getItemsStream().listen(
+    _streamSubscription = dreamsRepositories.getItemsStream().listen(
       (data) {
         emit(
           DreamsState(
@@ -51,13 +54,13 @@ class DreamsCubit extends Cubit<DreamsState> {
     required document,
     required id,
   }) async {
-    await _dreamsRepositories.delete(id: document.id);
+    await dreamsRepositories.delete(id: document.id);
   }
 
   Future<void> add({
     required String name,
   }) async {
-    _dreamsRepositories.add(name: name);
+    dreamsRepositories.add(name: name);
   }
 
   @override

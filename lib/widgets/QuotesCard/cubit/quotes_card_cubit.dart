@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:life_wiev/core/enums/enums.dart';
 import 'package:life_wiev/models/QuotesModel/quotes_model.dart';
-import 'package:life_wiev/services/Data/Repositories/motivation_quotes_repositories.dart';
+import 'package:life_wiev/services/Data&Repositories/Repositories/motivation_quotes_repositories.dart';
 
 part 'quotes_card_state.dart';
 
 class QoutesCardCubit extends Cubit<QoutesCardState> {
-  QoutesCardCubit(this.motivationQuotesRepositories)
+  QoutesCardCubit({required this.motivationQuotesRepositories})
       : super(const QoutesCardState());
 
   final MotivationQuotesRepositories motivationQuotesRepositories;

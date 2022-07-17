@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 
-class DreamsRemoteDataSource {
-  Stream<QuerySnapshot<Map<String, dynamic>>?> dreamsRemoteData() {
+@injectable
+class GratefulRemoteDataSource {
+  @factoryMethod
+  Stream<QuerySnapshot<Map<String, dynamic>>?> gratefulRemoteData() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
@@ -10,7 +13,7 @@ class DreamsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('dreams')
+        .collection('grateful')
         .snapshots();
   }
 
@@ -22,7 +25,7 @@ class DreamsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('dreams')
+        .collection('grateful')
         .doc(id)
         .delete();
   }
@@ -35,11 +38,11 @@ class DreamsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('dreams')
+        .collection('grateful')
         .add({'name': name});
   }
 
-// Metoda zlicznia ilości powodów do wdzięczności 
+// Metoda zlicznia ilości powodów do wdzięczności
 
   // Future<int?> getCount() async {
   //   final userID = FirebaseAuth.instance.currentUser?.uid;

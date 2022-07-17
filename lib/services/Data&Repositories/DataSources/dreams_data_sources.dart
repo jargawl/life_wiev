@@ -1,8 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
 
-class GoalsRemoteDataSource {
-  Stream<QuerySnapshot<Map<String, dynamic>>?> goalsRemoteData() {
+
+@injectable  
+class DreamsRemoteDataSource {
+  @factoryMethod 
+  Stream<QuerySnapshot<Map<String, dynamic>>?> dreamsRemoteData() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
@@ -10,7 +14,7 @@ class GoalsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('goals')
+        .collection('dreams')
         .snapshots();
   }
 
@@ -22,7 +26,7 @@ class GoalsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('goals')
+        .collection('dreams')
         .doc(id)
         .delete();
   }
@@ -35,7 +39,7 @@ class GoalsRemoteDataSource {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('goals')
+        .collection('dreams')
         .add({'name': name});
   }
 
