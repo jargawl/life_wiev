@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../widgets/snackbars.dart';
 import '../cubit/login_page_cubit.dart';
 import '../widgets/widgets.dart';
 
@@ -65,7 +66,6 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(
             height: 20,
           ),
-          Text(errorMessage),
           BlocProvider(
             create: (context) => LoginPageCubit(),
             child: BlocBuilder<LoginPageCubit, LoginPageState>(
@@ -81,7 +81,8 @@ class _LoginPageState extends State<LoginPage> {
                                 password: widget.passwordController.text);
                       } catch (error) {
                         setState(() {
-                          errorMessage = error.toString();
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(MySnackBars.failureSnackBar);
                         });
                       }
 
@@ -96,7 +97,8 @@ class _LoginPageState extends State<LoginPage> {
                             );
                       } catch (error) {
                         setState(() {
-                          errorMessage = error.toString();
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(MySnackBars.failureSnackBar);
                         });
                       }
                       //logowanie

@@ -1,13 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:life_view/pages/home_page/widgets/emotion_card.dart';
-import 'package:life_view/pages/home_page/widgets/fade_app_bar.dart';
-import 'package:life_view/pages/home_page/widgets/life_view_card.dart';
-import 'package:life_view/pages/home_page/widgets/log_out_button.dart';
-import 'package:life_view/pages/home_page/widgets/topic.dart';
-import 'package:life_view/pages/home_page/widgets/logo_banner.dart';
-import 'package:life_view/pages/home_page/widgets/topic_small.dart';
 import '../../quotes_card /quotes_card.dart';
+import '../widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -48,7 +42,7 @@ class _HomePageState extends State<HomePage> {
             controller: _scrollController,
             slivers: const [
               LogoBanner(),
-              Topic('How do you feel today?'),
+              TopicInfo('How do you feel today?'),
               TopicSmall('Press emoticons to count your emotions.'),
               EmotionGrid(),
               SliverToBoxAdapter(

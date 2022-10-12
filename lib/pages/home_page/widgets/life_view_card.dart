@@ -10,7 +10,7 @@ class LifeViewList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 350,
+        height: 250,
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: const [

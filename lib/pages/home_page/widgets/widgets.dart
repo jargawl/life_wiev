@@ -8,4 +8,5 @@ export './log_out_button.dart';
 export './logo_banner.dart';
 export './reset_count_button.dart';
 export './topic_small.dart';
+export 'topic_info.dart';
 export './topic.dart';

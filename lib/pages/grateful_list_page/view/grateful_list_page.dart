@@ -7,6 +7,7 @@ import 'package:life_view/core/enums/enums.dart';
 import 'package:life_view/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
 import 'package:life_view/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
 
+import '../../../widgets/snackbars.dart';
 import '../cubit/grateful_cubit.dart';
 
 class GratefulPage extends StatelessWidget {
@@ -43,6 +44,8 @@ class GratefulPage extends StatelessWidget {
                 context.read<GratefulCubit>().add(
                       name: controller.text,
                     );
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(MySnackBars.successAddSnackBar);
                 controller.clear();
               },
               child: const Icon(
@@ -71,7 +74,6 @@ class GratefulPage extends StatelessWidget {
                 backgroundColor: Colors.amber,
               ));
             }
-
             if (state.status == Status.loading) {
               return const Center(child: CircularProgressIndicator());
             }
@@ -108,7 +110,7 @@ class GratefulPage extends StatelessWidget {
                           key: ValueKey(itemModel.id),
                           background: const DecoratedBox(
                             decoration: BoxDecoration(
-                              color: Colors.red,
+                              color: Colors.lightBlue,
                             ),
                             child: Align(
                               alignment: Alignment.centerRight,
