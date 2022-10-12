@@ -6,6 +6,6 @@ With LifeView you can think about what you are grateful for in your life ☀️,
 In my application I used : REST API, JSON, Get_it, Injecteable, Bloc/Cubit, Unit tests, Freezed, Dio, Retrofit, Firebase Database, Firebase Authentication.
 
 
-https://user-images.githubusercontent.com/100567187/179371198-45592426-d13d-494f-a5a6-b8fed3d2bc3d.mov
 
+https://user-images.githubusercontent.com/100567187/179395365-13a40eb5-741c-4adc-ac6e-30cc08e42891.mov
 
