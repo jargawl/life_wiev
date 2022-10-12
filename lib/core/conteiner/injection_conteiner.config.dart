@@ -9,9 +9,9 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../pages/DreamsListPage/cubit/dreams_cubit.dart' as _i9;
-import '../../pages/GoalsListPage/cubit/goals_cubit.dart' as _i10;
-import '../../pages/GratefulListPage/cubit/grateful_cubit.dart' as _i11;
+import '../../pages/dreams_list_page/cubit/dreams_cubit.dart' as _i9;
+import '../../pages/goals_list_page/cubit/goals_cubit.dart' as _i10;
+import '../../pages/grateful_list_page/cubit/grateful_cubit.dart' as _i11;
 import '../../services/Data&Repositories/DataSources/dreams_data_sources.dart'
     as _i3;
 import '../../services/Data&Repositories/DataSources/goals_data_sources.dart'

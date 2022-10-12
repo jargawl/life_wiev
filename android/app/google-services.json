@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:548354758583:android:dcf4bf4291354fd09eba32",
         "android_client_info": {
-          "package_name": "com.example.life_wiev"
+          "package_name": "com.example.life_view"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "548354758583-8b3vnujre8flpcd7gu8pb97u0ksucept.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "jaroslawgawlik.com.lifeWiev"
+                "bundle_id": "jaroslawgawlik.com.lifeview"
               }
             }
           ]
@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:548354758583:android:bbb42f1507bbb7179eba32",
         "android_client_info": {
-          "package_name": "jaroslawgawlik.com.life_wiev"
+          "package_name": "jaroslawgawlik.com.life_view"
         }
       },
       "oauth_client": [
@@ -70,7 +70,7 @@
               "client_id": "548354758583-8b3vnujre8flpcd7gu8pb97u0ksucept.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "jaroslawgawlik.com.lifeWiev"
+                "bundle_id": "jaroslawgawlik.com.lifeview"
               }
             }
           ]

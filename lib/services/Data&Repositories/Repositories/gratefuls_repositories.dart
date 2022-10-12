@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:life_wiev/models/ListItemModel/list_item_model.dart';
-import 'package:life_wiev/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
+import 'package:life_view/models/list_item_model.dart';
+import 'package:life_view/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
 
-
-@injectable  
+@injectable
 class GratefulRepositories {
   GratefulRepositories({required this.gratefulRemoteDataSource});
   final GratefulRemoteDataSource gratefulRemoteDataSource;

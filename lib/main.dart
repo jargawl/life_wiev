@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:life_wiev/core/app/my_app.dart';
-import 'package:life_wiev/firebase_options.dart';
-
+import 'package:life_view/core/app/app.dart';
+import 'package:life_view/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +9,5 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-
-  runApp(const  MyApp());
+  runApp(const App());
 }

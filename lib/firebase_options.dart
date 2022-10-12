@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '548354758583',
     projectId: 'life-view-517cf',
     storageBucket: 'life-view-517cf.appspot.com',
-    iosClientId: '548354758583-qvm18u4hauel1ckel0pipit9s2vq378l.apps.googleusercontent.com',
-    iosBundleId: 'com.example.lifeWiev',
+    iosClientId:
+        '548354758583-qvm18u4hauel1ckel0pipit9s2vq378l.apps.googleusercontent.com',
+    iosBundleId: 'com.example.lifeview',
   );
 }

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.life_wiev">
+    package="com.example.life_view">
    <application
-        android:label="life_wiev"
+        android:label="life_view"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,6 +1,6 @@
 {
-    "name": "life_wiev",
-    "short_name": "life_wiev",
+    "name": "life_view",
+    "short_name": "life_view",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
