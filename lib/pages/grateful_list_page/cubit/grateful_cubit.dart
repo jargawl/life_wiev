@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:life_view/core/enums/enums.dart';
-import 'package:life_view/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
+import 'package:life_view/services/repositories/gratefuls_repositories.dart';
 
 import '../../../models/list_item_model.dart';
 

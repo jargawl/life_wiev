@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_view/core/enums/enums.dart';
 import 'package:life_view/models/quotes_model.dart';
-import 'package:life_view/services/Data&Repositories/DataSources/motivation_quotes_data_sources.dart';
-import 'package:life_view/services/Data&Repositories/Repositories/motivation_quotes_repositories.dart';
 
+import '../../../services/services.dart';
 import '../cubit/quotes_card_cubit.dart';
 
 class QuotesCardList extends StatelessWidget {

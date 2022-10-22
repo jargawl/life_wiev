@@ -12,17 +12,17 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../../pages/dreams_list_page/cubit/dreams_cubit.dart' as _i9;
 import '../../pages/goals_list_page/cubit/goals_cubit.dart' as _i10;
 import '../../pages/grateful_list_page/cubit/grateful_cubit.dart' as _i11;
-import '../../services/Data&Repositories/DataSources/dreams_data_sources.dart'
+import '../../services/data_sources/dreams_data_sources.dart'
     as _i3;
-import '../../services/Data&Repositories/DataSources/goals_data_sources.dart'
+import '../../services/data_sources/goals_data_sources.dart'
     as _i5;
-import '../../services/Data&Repositories/DataSources/gratefuls_data_sources.dart'
+import '../../services/data_sources/gratefuls_data_sources.dart'
     as _i7;
-import '../../services/Data&Repositories/Repositories/dreams_repositories.dart'
+import '../../services/repositories/dreams_repositories.dart'
     as _i4;
-import '../../services/Data&Repositories/Repositories/goals_repositories.dart'
+import '../../services/repositories/goals_repositories.dart'
     as _i6;
-import '../../services/Data&Repositories/Repositories/gratefuls_repositories.dart'
+import '../../services/repositories/gratefuls_repositories.dart'
     as _i8; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:life_view/core/enums/enums.dart';
 import 'package:life_view/models/list_item_model.dart';
-import 'package:life_view/services/Data&Repositories/Repositories/goals_repositories.dart';
+import 'package:life_view/services/repositories/goals_repositories.dart';
 part 'goals_state.dart';
 
 @injectable

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:life_view/core/enums/enums.dart';
-
-import 'package:life_view/services/Data&Repositories/DataSources/gratefuls_data_sources.dart';
-import 'package:life_view/services/Data&Repositories/Repositories/gratefuls_repositories.dart';
-
+import '../../../services/services.dart';
 import '../../../widgets/snackbars.dart';
 import '../cubit/grateful_cubit.dart';
 

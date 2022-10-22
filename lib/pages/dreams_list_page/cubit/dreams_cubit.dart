@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:life_view/core/enums/enums.dart';
 import 'package:life_view/models/list_item_model.dart';
-import 'package:life_view/services/Data&Repositories/Repositories/dreams_repositories.dart';
+import 'package:life_view/services/repositories/dreams_repositories.dart';
 part 'dreams_state.dart';
 
 @injectable

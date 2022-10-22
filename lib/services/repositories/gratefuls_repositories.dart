@@ -1,19 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:life_view/models/list_item_model.dart';
-import 'package:life_view/services/Data&Repositories/DataSources/dreams_data_sources.dart';
+
+import '../services.dart';
 
 @injectable
-class DreamsRepositories {
-  DreamsRepositories({required this.dreamsRemoteDataSource});
-  final DreamsRemoteDataSource dreamsRemoteDataSource;
+class GratefulRepositories {
+  GratefulRepositories({required this.gratefulRemoteDataSource});
+  final GratefulRemoteDataSource gratefulRemoteDataSource;
 
   Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return dreamsRemoteDataSource.dreamsRemoteData().map(
+    return gratefulRemoteDataSource.gratefulRemoteData().map(
       (querySnapshot) {
         return querySnapshot!.docs.map((doc) {
           return ItemModel(
@@ -30,7 +31,7 @@ class DreamsRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return dreamsRemoteDataSource.delete(id: id);
+    return gratefulRemoteDataSource.delete(id: id);
   }
 
   Future<void> add({required String name}) {
@@ -38,7 +39,7 @@ class DreamsRepositories {
     if (userID == null) {
       Exception('Jesteś nie zalogowany');
     }
-    return dreamsRemoteDataSource.add(name: name);
+    return gratefulRemoteDataSource.add(name: name);
   }
 
 // Metoda zlicznia ilości powodów do wdzięczności
@@ -47,7 +48,7 @@ class DreamsRepositories {
   //   if (userID == null) {
   //     Exception('Jesteś nie zalogowany');
   //   }
-  //   _DreamsRemoteDataSource;
+  //   _gratefulRemoteDataSource;
   //   return null;
   // }
 }
