@@ -53,7 +53,7 @@ class EmotionCardState extends State<EmotionCard> {
                   Text(
                     widget.emotion.title,
                     style: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold),
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     '$counter',

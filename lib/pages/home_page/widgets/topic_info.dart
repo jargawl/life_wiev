@@ -14,6 +14,8 @@ class TopicInfo extends StatefulWidget {
 class _TopicInfoState extends State<TopicInfo> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.only(top: 0.0, left: 15.0),
@@ -27,9 +29,7 @@ class _TopicInfoState extends State<TopicInfo> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              width: 100,
-            ),
+            SizedBox(width: 0.33 * screenWidth),
             InkWell(
               onTap: () {
                 ScaffoldMessenger.of(context)
