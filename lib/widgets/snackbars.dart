@@ -59,7 +59,7 @@ class MySnackBars {
     backgroundColor: Colors.transparent,
     content: AwesomeSnackbarContent(
       title: 'Warning!',
-      message: 'You Have a warning for this message.\nPlease read carefully!',
+      message: 'Something went wrong...',
       contentType: ContentType.warning,
     ),
   );

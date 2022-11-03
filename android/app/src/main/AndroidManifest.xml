@@ -3,7 +3,7 @@
    <application
         android:label="life_view"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/wms">
         <activity
             android:name=".MainActivity"
             android:exported="true"
