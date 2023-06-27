@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../view/view.dart';
-
 
 class GoalsList extends StatelessWidget {
   const GoalsList({Key? key}) : super(key: key);
@@ -33,13 +33,20 @@ class GoalsList extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Text(
-              "My goals",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.black.withOpacity(.9),
-              ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  "My goals",
+                  style: GoogleFonts.wellfleet(
+                    color: Colors.lightBlue,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

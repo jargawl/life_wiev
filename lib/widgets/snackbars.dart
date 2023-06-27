@@ -63,4 +63,16 @@ class MySnackBars {
       contentType: ContentType.warning,
     ),
   );
+
+    /// password changes
+  static var passwordChange = SnackBar(
+    elevation: 0,
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.transparent,
+    content: AwesomeSnackbarContent(
+      title: 'Check your email!',
+      message: 'Password reset email sent',
+      contentType: ContentType.warning,
+    ),
+  );
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:life_view/models/emotion_model.dart';
 
 class EmotionCard extends StatefulWidget {
@@ -10,29 +12,53 @@ class EmotionCard extends StatefulWidget {
 }
 
 class EmotionCardState extends State<EmotionCard> {
+  late Future<SharedPreferences> _prefs;
+  late String _counterKey;
   int counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _prefs = SharedPreferences.getInstance();
+    _counterKey = 'counter_${widget.emotion.title}';
+    loadCounter();
+  }
+
+  void loadCounter() async {
+    final SharedPreferences prefs = await _prefs;
+    setState(() {
+      counter = prefs.getInt(_counterKey) ?? 0;
+    });
+  }
+
+  void saveCounter() async {
+    final SharedPreferences prefs = await _prefs;
+    prefs.setInt(_counterKey, counter);
+  }
 
   void incrementCounter() {
     setState(() {
       counter++;
+      saveCounter();
     });
   }
 
   void resetCounter() {
     setState(() {
       counter = 0;
+      saveCounter();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (() {
+      onTap: () {
         incrementCounter();
-      }),
-      onLongPress: (() {
+      },
+      onLongPress: () {
         resetCounter();
-      }),
+      },
       child: Padding(
         padding: const EdgeInsets.all(12.5),
         child: Row(
@@ -40,9 +66,9 @@ class EmotionCardState extends State<EmotionCard> {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
+              child: Image.asset(
                 widget.emotion.image,
-                width: 59,
+                width: 50,
               ),
             ),
             Padding(
@@ -52,13 +78,19 @@ class EmotionCardState extends State<EmotionCard> {
                 children: [
                   Text(
                     widget.emotion.title,
-                    style: const TextStyle(
-                        fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.wellfleet(
+                      color: Colors.lightBlue,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     '$counter',
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.normal),
+                    style: GoogleFonts.wellfleet(
+                      color: Colors.lightBlue,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -77,8 +109,8 @@ class EmotionGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        mainAxisSpacing: 10.0,
-        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 50.0,
         childAspectRatio: 2.5 / 1,
         crossAxisCount: 2,
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../view/view.dart';
 
 class GratefulList extends StatelessWidget {
@@ -31,13 +32,20 @@ class GratefulList extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Text(
-              "My grateful list",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.black.withOpacity(.9),
-              ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  "My grateful list",
+                  style: GoogleFonts.wellfleet(
+                    color: Colors.lightBlue,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

@@ -13,29 +13,30 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
-  firebase_core: ^1.14.1
-  firebase_core_web: ^1.6.2
-  cloud_firestore: ^3.1.12
+  google_fonts: ^4.0.4
+  firebase_core: ^2.14.0
+  firebase_core_web: ^2.6.0
+  cloud_firestore: ^4.8.2
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
   flutterfire_ui: ^0.4.0+4
-  firebase_auth: ^3.3.16
-  rive: ^0.8.4
-  dio: ^4.0.6
+  firebase_auth: ^4.6.3
+  rive: ^0.11.3
+  dio: ^5.2.1+1
   flutter_facebook_auth: ^4.3.4
   google_sign_in: ^5.3.2
-  intl: ^0.17.0
+  intl: ^0.18.0
   json_annotation: ^4.5.0
-  injectable: ^1.5.3
-  freezed_annotation: ^1.1.0
-  retrofit: ^3.0.1+1
+  injectable: ^2.1.2
+  freezed_annotation: ^2.2.0
+  retrofit: ^4.0.1
   get_it: ^7.2.0
   flutter_localizations:
     sdk: flutter
-  awesome_snackbar_content: ^0.0.5  
+  awesome_snackbar_content: ^0.1.2  
   flutter_native_splash: ^2.2.11
-  flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.13.1
+  shared_preferences: ^2.1.2
 
 
 dev_dependencies:
@@ -45,16 +46,58 @@ dev_dependencies:
   bloc_test: ^9.0.3
   build_runner: ^2.1.7
   json_serializable: ^6.1.4
-  freezed: ^1.1.1
-  retrofit_generator: ^4.0.1
-  injectable_generator: ^1.5.3
+  freezed: ^2.3.5
+  retrofit_generator: ^7.0.3
+  injectable_generator: ^2.1.6
 
 flutter:
   uses-material-design: true
   generate: true
   assets:
     - assets/
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Nunito-BlackItalic.ttf
+          style: italic
+          weight: 800
+        - asset: assets/fonts/Nunito-Black.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-ExtraBoldItalic.ttf
+          style: italic
+          weight: 800
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-BoldItalic.ttf
+          style: italic
+          weight: 700
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-SemiBoldItalic.ttf
+          style: italic
+          weight: 600
+        - asset: assets/fonts/Nunito-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito-MediumItalic.ttf
+          style: italic
+          weight: 500
+        - asset: assets/fonts/Nunito-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Nunito-LightItalic.ttf
+          style: italic
+          weight: 300
+        - asset: assets/fonts/Nunito-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Nunito-ExtraLightItalic.ttf
+          style: italic
+          weight: 200
 
+          
 flutter_native_splash:
   color: "#FFFFFF"
   image: assets/logo.png

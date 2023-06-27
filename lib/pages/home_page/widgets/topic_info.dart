@@ -29,7 +29,7 @@ class _TopicInfoState extends State<TopicInfo> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(width: 0.33 * screenWidth),
+            SizedBox(width: 0.22 * screenWidth),
             InkWell(
               onTap: () {
                 ScaffoldMessenger.of(context)

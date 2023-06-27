@@ -1,0 +1,25 @@
+name: api_client
+description: Flutter package that handles api communication requests
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  cloud_firestore: ^3.1.14
+  firebase_messaging: ^13.1.0
+  flutter:
+    sdk: flutter
+
+  http: ^0.13.5
+  json_annotation: ^4.7.0
+  uuid: ^3.0.6
+
+dev_dependencies:
+  build_runner: ^2.3.2
+  equatable: ^2.0.3
+  flutter_test:
+    sdk: flutter
+  json_serializable: ^6.5.4
+  very_good_analysis: ^3.1.0

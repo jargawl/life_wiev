@@ -18,7 +18,7 @@ class SingOutButton extends StatelessWidget {
             elevation: MaterialStateProperty.all(5),
             alignment: Alignment.center,
             padding: MaterialStateProperty.all(const EdgeInsets.only(
-                right: 50, left: 50, top: 12.5, bottom: 12.5)),
+                right: 50, left: 50, top: 12.5, bottom: 5.5)),
             backgroundColor: MaterialStateProperty.all(
               const Color.fromARGB(255, 197, 229, 244),
             ),

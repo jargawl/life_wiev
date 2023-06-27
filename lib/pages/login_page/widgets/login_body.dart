@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:life_view/pages/login_page/views/forgot_password_page.dart';
 
 import '../../../widgets/snackbars.dart';
 import '../login_page.dart';
@@ -32,10 +33,10 @@ class _LoginBodyState extends State<LoginBody> {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: TextField(
               decoration: const InputDecoration(
                 hintText: 'e-mail',
@@ -47,7 +48,7 @@ class _LoginBodyState extends State<LoginBody> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: TextField(
               decoration: const InputDecoration(
                 hintText: 'password',
@@ -60,7 +61,7 @@ class _LoginBodyState extends State<LoginBody> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           BlocProvider(
             create: (context) => LoginPageCubit(),
@@ -113,7 +114,7 @@ class _LoginBodyState extends State<LoginBody> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           if (isCreatingAccount == false) ...[
             TextButton(
@@ -127,6 +128,20 @@ class _LoginBodyState extends State<LoginBody> {
                 style: GoogleFonts.wellfleet(
                   color: Colors.lightBlue,
                   fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => const ForgotPasswordPage()));
+              },
+              child: Text(
+                'Forgot your password?',
+                style: GoogleFonts.wellfleet(
+                  color: Colors.lightBlue,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),

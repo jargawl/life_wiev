@@ -1,0 +1,22 @@
+name: users_repository
+description: Flutter package that handles user related requests
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  api_client:
+    path: ../api_client
+  authentication_repository:
+    path: ../authentication_repository
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  intl: ^0.17.0 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^3.1.0
