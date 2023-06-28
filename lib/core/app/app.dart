@@ -1,11 +1,15 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:life_view/pages/grateful_list_page/cubit/grateful_cubit.dart';
+import 'package:life_view/pages/login_page/cubit/login_page_cubit.dart';
+import 'package:life_view/pages/quotes_card%20/cubit/quotes_card_cubit.dart';
 import 'package:life_view/pages/root_page/views/root_page.dart';
 import 'package:life_view/services/data_sources/data_sources.dart';
-import 'package:life_view/services/repositories/dreams_repositories.dart';
-
+import 'package:life_view/services/repositories/repositories.dart';
 import '../../pages/dreams_list_page/cubit/dreams_cubit.dart';
+import '../../pages/goals_list_page/cubit/goals_cubit.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -20,6 +24,33 @@ class App extends StatelessWidget {
           create: (_) => DreamsCubit(
             dreamsRepositories: DreamsRepositories(
               dreamsRemoteDataSource: DreamsRemoteDataSource(),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => GoalsCubit(
+            goalsRepositories: GoalsRepositories(
+              goalsRemoteDataSource: GoalsRemoteDataSource(),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => GratefulCubit(
+            gratefulRepositories: GratefulRepositories(
+              gratefulRemoteDataSource: GratefulRemoteDataSource(),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => LoginPageCubit(),
+        ),
+        BlocProvider(
+          create: (_) => QuotesCardCubit(
+            motivationQuotesRepositories: MotivationQuotesRepositories(
+              motivationQuotesRemoteDioDataSources:
+                  MotivationQuotesRemoteRetrofitDataSources(
+                Dio(),
+              ),
             ),
           ),
         ),
