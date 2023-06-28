@@ -1,5 +1,5 @@
-// ignore_for_file: public_member_api_docs, use_if_null_to_convert_nulls_to_bools
-
+// ignore_for_file: public_member_api_docs,
+// ignore_for_file:use_if_null_to_convert_nulls_to_bools,
 import 'dart:async';
 
 import 'package:api_client/api_client.dart';

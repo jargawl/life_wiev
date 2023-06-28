@@ -1,7 +1,0 @@
-{
-    "@@locale": "en",
-    "currency": "Currency",
-    "@currency": {
-        "description": "Text shown in the Currency Row Select"
-    }
-}

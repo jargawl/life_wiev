@@ -155,8 +155,10 @@ class NameWidgetGoals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      width: 400,
+      width: screenWidth * 0.95,
       decoration: BoxDecoration(
         color: Colors.lightBlue[200],
         borderRadius: const BorderRadius.all(

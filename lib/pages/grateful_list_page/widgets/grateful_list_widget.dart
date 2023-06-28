@@ -7,6 +7,8 @@ class GratefulList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {
         Navigator.of(context).push(
@@ -14,8 +16,7 @@ class GratefulList extends StatelessWidget {
         );
       },
       child: Container(
-        width: 300,
-        height: 100,
+        width: screenWidth * 0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
         ),
@@ -29,13 +30,13 @@ class GratefulList extends StatelessWidget {
                   "https://www.skipprichard.com/wp-content/uploads/2018/11/bigstock-Close-up-Of-Gratitude-Word-Wit-265169737.jpg",
                   fit: BoxFit.cover,
                 )),
-            const SizedBox(
-              height: 10,
+                  SizedBox(
+              height: screenHeight * 0.01,
             ),
             Row(
               children: [
-                const SizedBox(
-                  width: 5,
+                      SizedBox(
+                  width: screenWidth * 0.01,
                 ),
                 Text(
                   "My grateful list",

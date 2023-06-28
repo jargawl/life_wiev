@@ -93,7 +93,7 @@ class DreamsPage extends StatelessWidget {
                         controller: controller,
                         decoration: InputDecoration(
                           hintStyle: GoogleFonts.wellfleet(),
-                          hintText: 'What is your realy big dream?',
+                          hintText: 'What is your really big dream?',
                           border: const OutlineInputBorder(),
                         ),
                       ),
@@ -155,8 +155,10 @@ class NameWidgetDreams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      width: 400,
+      width: screenWidth * 0.95,
       decoration: BoxDecoration(
         color: Colors.lightBlue[200],
         borderRadius: const BorderRadius.all(

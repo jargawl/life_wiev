@@ -8,6 +8,8 @@ class DreamList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {
         Navigator.of(context).push(
@@ -15,8 +17,7 @@ class DreamList extends StatelessWidget {
         );
       },
       child: Container(
-        width: 300,
-        height: 100,
+        width: screenWidth * 0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
         ),
@@ -30,13 +31,13 @@ class DreamList extends StatelessWidget {
                   "https://miro.medium.com/max/500/1*lTVcNwigg8MEE-wHnHIYAQ.jpeg",
                   fit: BoxFit.cover,
                 )),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: screenHeight * 0.01,
             ),
             Row(
               children: [
-                const SizedBox(
-                  width: 5,
+                SizedBox(
+                  width: screenWidth * 0.01,
                 ),
                 Text(
                   "My dreams",

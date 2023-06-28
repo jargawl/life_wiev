@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:life_view/pages/login_page/views/forgot_password_page.dart';
-
 import '../../../widgets/snackbars.dart';
 import '../login_page.dart';
 
